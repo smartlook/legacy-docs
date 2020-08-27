@@ -7,37 +7,33 @@
 <div id="sidebar" class="docs-sidebar off-canvas-sidebar">
   <!-- SHOW: sidebar + overlay -->
   <div class="docs-nav">
-
     {% include search/field.html %}
 
     <h5>Contents</h5>
     <ul class="menu">
-      {% if page.url contains site.ca_url_web %}
-      {% for item in site.data.articles.web %}
+      {% if page.url contains 'docs/web' %} {% for item in
+      site.data.articles.web %}
       <li class="menu-item {% if item.url == page.url %}active{% endif %}">
         <a href="{{ item.url }}">{{ item.title }}</a>
       </li>
-      {% endfor %}
-      {% endif %}
-
-      {% if page.url contains site.ca_url_sdk %}
-      {% for item in site.data.articles.sdk %}
+      {% endfor %} {% endif %} {% if page.url contains 'docs/sdk' %} {% for item
+      in site.data.articles.sdk %}
       <li class="menu-item {% if item.url == page.url %}active{% endif %}">
         <a href="{{ item.url }}">{{ item.title }}</a>
       </li>
-      {% endfor %}
-      {% endif %}
+      {% endfor %} {% endif %}
     </ul>
     <!-- menu -->
 
     <div class="edit-on-github">
-      <a href="https://www.github.com/{{ site.github_username }}/{{ site.git_repo }}/blob/master/{{ page.path }}"
-        target="_blank">
+      <a
+        href="https://www.github.com/{{ site.github_username }}/{{ site.git_repo }}/blob/master/{{ page.path }}"
+        target="_blank"
+      >
         {% include component/svg/github-logo.html %} Edit this page
       </a>
     </div>
     <!-- edit-on-github -->
-
   </div>
   <!-- docs-nav -->
 </div>

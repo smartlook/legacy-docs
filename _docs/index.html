@@ -1,7 +1,7 @@
---- 
-layout: "custom" 
-class: "home-docs" 
-permalink: /docs/index.html 
+---
+layout: "custom"
+class: "home-docs"
+permalink: /docs/index.html
 ---
 
 <div class="container grid-lg">
@@ -10,9 +10,8 @@ permalink: /docs/index.html
       <div class="intro">
         <h1>Developer API</h1>
         <p>Welcome to Smartlook developer Docs. Feel free to look around.</p>
-        
+
         {% include search/field.html %}
-        
       </div>
     </div>
   </div>
@@ -26,11 +25,19 @@ permalink: /docs/index.html
         <a href="{{ site.ca_url_web }}">
           <div class="card">
             <div class="card-header">
-              <img src="/assets/img/icons/web.png" class="center" width="96px" height="96px" alt="{{ site.ca_web }}">
+              <img
+                src="/legacy-docs/assets/img/icons/web.png"
+                class="center"
+                width="96px"
+                height="96px"
+                alt="{{ site.ca_web }}"
+              />
               <div class="card-title h2">
                 <p>{{ site.ca_web}}</p>
               </div>
-              <p class="card-subtitle">{{ site.ca_d_web }} Visitor info, GDPR, ...</p>
+              <p class="card-subtitle">
+                {{ site.ca_d_web }} Visitor info, GDPR, ...
+              </p>
             </div>
           </div>
         </a>
@@ -42,18 +49,25 @@ permalink: /docs/index.html
         <a href="{{ site.ca_url_sdk }}">
           <div class="card">
             <div class="card-header">
-              <img src="/assets/img/icons/sdk.png" class="center" width="96px" height="96px" alt="{{ site.ca_sdk }}">
+              <img
+                src="/legacy-docs/assets/img/icons/sdk.png"
+                class="center"
+                width="96px"
+                height="96px"
+                alt="{{ site.ca_sdk }}"
+              />
               <div class="card-title h2">
                 <p>{{ site.ca_sdk }}</p>
               </div>
-              <p class="card-subtitle">{{ site.ca_d_sdk }} Android, iOS, React Native, ...</p>
+              <p class="card-subtitle">
+                {{ site.ca_d_sdk }} Android, iOS, React Native, ...
+              </p>
             </div>
           </div>
         </a>
         <!-- card -->
       </div>
       <!-- column -->
-
     </div>
     <!-- columns -->
   </div>

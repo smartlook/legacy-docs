@@ -8,9 +8,9 @@ Smartlook automatically catches all unhandled Javascript errors.
 Though, Smartlook cannot log the precise error message if the error is from a script that has different origin. This is known as a CORS error.
 CORS is short for “Cross Origin Resource Sharing”, and it’s a set of APIs (mostly HTTP headers) that dictate how files ought to be handled when used from a different origin (domain).
 
-When a CORS error occurs in Smartlook’s Javascript console you’ll see a message: 
+When a CORS error occurs in Smartlook’s Javascript console you’ll see a message:
 
-`Cross-origin error - look at https://smartlook.github.io/docs/web/error-logging/ for more info.`
+`Cross-origin error - look at https://smartlook.github.io/legacy-docs/docs/web/error-logging/ for more info.`
 
 
 ## Fixing the CORS errors
@@ -31,7 +31,7 @@ You can use Smartlook’s Custom Errors API (see below) if you cant fix the CORS
 
 ## Custom errors
 
-With the Custom Errors API, you can customize how Smartlook log errors that had been handled in your application in any way you wish. 
+With the Custom Errors API, you can customize how Smartlook log errors that had been handled in your application in any way you wish.
 
 You can then use these logs in Smartlook analytics and session replay to visualize and understand where the errors you’ve logged occured.
 
@@ -64,7 +64,7 @@ Where `errorArg` could be either an instance of Error object or simple string me
 ```js
 <script>
   // ...custom code
-  
+
   // log some unexpected behaviour using Smartlook API
   smartlook('error', 'calendar showing bad week');
 </script>

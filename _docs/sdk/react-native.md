@@ -43,13 +43,13 @@ allprojects {
 }
 ```
 
-Also edit `gradle-wrapper.properties` so you are using: `gradle-4.4-all.zip` -> This step is not needed in newer React native versions. 
+Also edit `gradle-wrapper.properties` so you are using: `gradle-4.4-all.zip` -> This step is not needed in newer React native versions.
 
 ## iOS
 
 ### Cocoapods (RN 0.60.0 and higher)
 
-Cocoapods seems to be [the way to integrate third party modules with native iOS components](https://facebook.github.io/react-native/blog/2019/07/03/version-60#cocoapods-by-default) into React Native apps now. 
+Cocoapods seems to be [the way to integrate third party modules with native iOS components](https://facebook.github.io/react-native/blog/2019/07/03/version-60#cocoapods-by-default) into React Native apps now.
 
 The following steps create a test app with integrated Smartlook:
 
@@ -74,7 +74,7 @@ pod install
 Then add Smartlook initialization to the `App.js` and run the app
 ```js
 // Smartlook initialization
-var Smartlook = require("smartlook-react-native-wrapper"); 
+var Smartlook = require("smartlook-react-native-wrapper");
 Smartlook.setupAndStartRecording("API_KEY");
 ```
 
@@ -83,7 +83,7 @@ using these commands
 # open App.js and add Smartlook initialisation there
 open ../App.js
 
-# open the Xcode workspace 
+# open the Xcode workspace
 open SLTest01.xcworkspace
 
 # finally run the Xcode project
@@ -91,11 +91,11 @@ open SLTest01.xcworkspace
 
 #### Cocoapods troubleshooting (RN 0.60.0 and higher)
 
-When you are using Cocoapods, you cannot use ~`react-native link`~. 
+When you are using Cocoapods, you cannot use ~`react-native link`~.
 
 To make sure the module is not linked the old way, call `$ react-native unlink smartlook-react-native-wrapper`
 
-When upgrading from an older, non-cocoapods version, make also sure there is no older version of `Smartlook.framework` bundled in your app. To check it out, 
+When upgrading from an older, non-cocoapods version, make also sure there is no older version of `Smartlook.framework` bundled in your app. To check it out,
 1. remove the smartlook-related line from your Podfile
 2. run `$ pod install` in your app `ios` directory to remove smartlook bridge from your app
 3. manually remove any `Smartlook.framework` that you find in your app Xcode project.
@@ -107,9 +107,9 @@ It aways helps to reset the environment by
 
 ### Legacy iOS framework linking (RN before 0.60.0)
 
-The native `Smartlook.framework` is no longer part of the installed bridge. 
+The native `Smartlook.framework` is no longer part of the installed bridge.
 
-If you need it for creating your own bridge, or if the traditional `$ react-native link  smartlook-react-native-wrapper` works for you, [download the latest version here](https://smartlook.github.io/docs/sdk/ios/#manual-installation) and add it manually to your iOS Xcode project. This makes you also responsible for its updates to latest versions.
+If you need it for creating your own bridge, or if the traditional `$ react-native link  smartlook-react-native-wrapper` works for you, [download the latest version here](https://smartlook.github.io/legacy-docs/docs/sdk/ios/#manual-installation) and add it manually to your iOS Xcode project. This makes you also responsible for its updates to latest versions.
 
 The RN bridge files that proxy the native SDK into React Native and the native framework header files are still distributed as part of the installed bridge.
 
@@ -122,4 +122,4 @@ var Smartlook = require('smartlook-react-native-wrapper');
 Smartlook.setupAndStartRecording("KEY");
 ```
 
-Description of additional public SDK methods can be found in <a href="https://smartlook.github.io/docs/sdk/android/">Android</a> and <a href="https://smartlook.github.io/docs/sdk/ios/">iOS</a> docs section. Please note that `initIrregular` methods **are not available** in React native Android version.
+Description of additional public SDK methods can be found in <a href="https://smartlook.github.io/legacy-docs/docs/sdk/android/">Android</a> and <a href="https://smartlook.github.io/legacy-docs/docs/sdk/ios/">iOS</a> docs section. Please note that `initIrregular` methods **are not available** in React native Android version.

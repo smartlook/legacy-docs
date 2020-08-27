@@ -80,7 +80,7 @@ plugins:
 title: "Smartlook API"
 google_analytics_id: "UA-73723446-2"
 github_username: smartlook
-git_repo: smartlook.github.io
+git_repo: legacy-docs
 
 ## Custom variables
 # (add if needed)
@@ -94,7 +94,7 @@ pr_email: "info@smartlook.com"
 pr_description: "Smartlook API. Developer DOCS."
 
 ## Url
-url_docs_root: "/docs/"
+url_docs_root: "/legacy-docs/docs/"
 
 ## Pages
 pa_github: "Smartlook GitHub"
@@ -109,5 +109,5 @@ ca_d_web: "Smartlook JavaScript API offers a number of extra features to make yo
 ca_d_sdk: "Smartlook SDK gives you the ability to record your native mobile apps."
 
 ### Categories (URL)
-ca_url_web: "/docs/web/"
-ca_url_sdk: "/docs/sdk/"
+ca_url_web: "/legacy-docs/docs/web/"
+ca_url_sdk: "/legacy-docs/docs/sdk/"

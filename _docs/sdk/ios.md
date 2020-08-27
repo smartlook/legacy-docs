@@ -13,7 +13,7 @@ description: "This SDK offers several options to developers and/or companies."
 
 ## Reporting issues and changelog
 
-For more information on how to report issues please check our [Smartlook SDK Support section](https://smartlook.github.io/docs/sdk/support/#how-to-submit-an-issue).
+For more information on how to report issues please check our [Smartlook SDK Support section](https://smartlook.github.io/legacy-docs/docs/sdk/support/#how-to-submit-an-issue).
 
 [Smartlook iOS SDK Changelog](https://github.com/smartlook/smartlook-ios-sdk) records all notable improvements, changes and fixes in SDK releases.
 
@@ -100,10 +100,10 @@ Smartlook.setup(key: "your-app-sdk-key", options:[.enableCrashytics: true, .fram
 [Smartlook setupWithKey:@"your-app-key" options:@{ SLSetupOptionEnableCrashyticsKey : @YES, SLSetupOptionFramerateKey : @2 }];
 ```
 
-|    Parameter   | Type     |                                                                         Description                                                                         | Default value |
-|:--------------:|:--------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------:|---------------|
-|   `.enableCrashlytics`   |   `bool`   | When this option is set to `true`, Smartlook automatically adds a custom `SMARTLOOK SESSION URL` key to Crashlytics reports. Its value is URL of the recording made by Smartlook during or before the crash.                                                                                   |  `false`           |
-|      `.framerate`        |    `Int`  | Framerate of screen capturing in frames per second (ftp)                                                                                                |  `1`             |
+|      Parameter       |  Type  |                                                                                                 Description                                                                                                  | Default value |
+|:--------------------:|:------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|---------------|
+| `.enableCrashlytics` | `bool` | When this option is set to `true`, Smartlook automatically adds a custom `SMARTLOOK SESSION URL` key to Crashlytics reports. Its value is URL of the recording made by Smartlook during or before the crash. | `false`       |
+|     `.framerate`     | `Int`  |                                                                           Framerate of screen capturing in frames per second (ftp)                                                                           | `1`           |
 
 Other startup options are described in the respective sections.
 
@@ -116,7 +116,7 @@ Higher framerates do not necessarily lead to bigger video data, but more frequen
 
 ### Recording pausing and resuming
 
-It is always possible to pause/resume the recording, and check if the recording is active.  
+It is always possible to pause/resume the recording, and check if the recording is active.
 
 ```swift
 Smartlook.startRecording() // start or resume paused recording
@@ -135,7 +135,7 @@ There is no need to manually stop recording when the app gets suspended by the u
 
 ### Recording session and user lifecycle
 
-User activities are recorded in sessions. Typical session starts with the app launch, and ends after user leaves the app (thchnically, the app gets in background). 
+User activities are recorded in sessions. Typical session starts with the app launch, and ends after user leaves the app (thchnically, the app gets in background).
 
 However, to cover a scenario when user activity in the app is interrupted for a minute by incomming call or message, Smartlook attempts to continue in the session even after the app re/launches after some short time in background.
 
@@ -172,57 +172,57 @@ SDK contains list of blacklisted views. These views won't be recorded (there wil
 You can mark sensitive view(s) by calling:
 
 ```swift
-self.emailLabel.slSensitive = true                             
-Smartlook.registerBlacklisted(object: someView)         
+self.emailLabel.slSensitive = true
+Smartlook.registerBlacklisted(object: someView)
 ```
 ```objc
-self.emailLabel.slSensitive = YES;                             
-[Smartlook registerBlacklistedObject:someView];              
+self.emailLabel.slSensitive = YES;
+[Smartlook registerBlacklistedObject:someView];
 ```
 If a view no longer shows sensitive data, it can be removed from the list again by calling
 
 ```swift
-self.emailLabel.slSensitive = false                             
-Smartlook.unregisterBlacklisted(object: someView)         
+self.emailLabel.slSensitive = false
+Smartlook.unregisterBlacklisted(object: someView)
 ```
 ```objc
-self.emailLabel.slSensitive = NO;                             
-[Smartlook unregisterBlacklistedObject:someView];              
+self.emailLabel.slSensitive = NO;
+[Smartlook unregisterBlacklistedObject:someView];
 ```
 #### Blacklisted classes and protocols
 
 You can also blacklist all descendants of some UIView subclass or all UIView subclasses that conform some protocol.
 
 ```swift
-Smartlook.registerBlacklisted(object: SensitiveView.self)      
-Smartlook.registerBlacklisted(object: SensitiveProtocol.self)  
+Smartlook.registerBlacklisted(object: SensitiveView.self)
+Smartlook.registerBlacklisted(object: SensitiveProtocol.self)
 ```
 ```objc
-[Smartlook registerBlacklistedObject:SensitiveView.class];          
-[Smartlook registerBlacklistedObject:@protocol(SensitiveProtocol)]; 
+[Smartlook registerBlacklistedObject:SensitiveView.class];
+[Smartlook registerBlacklistedObject:@protocol(SensitiveProtocol)];
 ```
 
-Note that for convenience, some classes are **blacklisted by default**: `UITextView`, `UITextField` and `WKWebView`. 
+Note that for convenience, some classes are **blacklisted by default**: `UITextView`, `UITextField` and `WKWebView`.
 
-To remove classes or protocols from the blacklisted list, call 
+To remove classes or protocols from the blacklisted list, call
 
 ```swift
-Smartlook.unregisterBlacklisted(object: SensitiveView.self)      
-Smartlook.unregisterBlacklisted(object: SensitiveProtocol.self)  
+Smartlook.unregisterBlacklisted(object: SensitiveView.self)
+Smartlook.unregisterBlacklisted(object: SensitiveProtocol.self)
 ```
 ```objc
-[Smartlook unregisterBlacklistedObject:SensitiveView.class];          
-[Smartlook unregisterBlacklistedObject:@protocol(SensitiveProtocol)]; 
+[Smartlook unregisterBlacklistedObject:SensitiveView.class];
+[Smartlook unregisterBlacklistedObject:@protocol(SensitiveProtocol)];
 ```
 
-Smartlook also defines two convenience *empty* protocols that can be used to *flag* classes to make them blacklisted/whitelisted: 
+Smartlook also defines two convenience *empty* protocols that can be used to *flag* classes to make them blacklisted/whitelisted:
 
 ```swift
 protocol Smartlook.SensitiveData
 protocol Smartlook.NotSensitiveData
 ```
 ```objc
-@protocol SLSensitiveData          
+@protocol SLSensitiveData
 @protocol SLNonSensitiveData
 ```
 
@@ -231,7 +231,7 @@ protocol Smartlook.NotSensitiveData
 As noted above, some classes are **blacklisted by default**. To record only some of their instances, you can whitelist:
 
 ```swift
-self.emailLabel.slSensitive = false                               // whitelists individual instance      
+self.emailLabel.slSensitive = false                               // whitelists individual instance
 Smartlook.registerWhitelisted(object: someView)                   // whitelists individual instance
 Smartlook.registerWhitelisted(object: SensitiveView.self)         // whitelists all instances of the class
 Smartlook.registerWhitelisted(object: SensitiveProtocol.self)     // whitelists all classes that conform the protocol
@@ -251,15 +251,15 @@ Embedded web views are blacklisted by default, i.e., their content is not visibl
 
 - **UIWebView** shows their content unrestricted. UIWebView is a deprecated class and apps that use it will soon not allowed in App Store. Thus, there is no way to hide selected elements in UIWebView other than overlaying the whole view programatically. See also [v1.2.7 changelog](https://github.com/smartlook/smartlook-ios-sdk#127---2019-12-18).
 
-- **WKWebView** hiddes fileds where user enters data by default. Any other HTML element that should be hidden can be flagged by assiging `smartlook-hide` CSS class to it. Fields hidden by default can be on the other hand whitelisted by assigning them `smartlook-show` CSS class. 
+- **WKWebView** hiddes fileds where user enters data by default. Any other HTML element that should be hidden can be flagged by assiging `smartlook-hide` CSS class to it. Fields hidden by default can be on the other hand whitelisted by assigning them `smartlook-show` CSS class.
 
 #### Tracking events
 
-The app may fine-tune the level of tracked events. 
+The app may fine-tune the level of tracked events.
 
-Typically, the default `fullTracking` mode is desired, as it gives a detailed picture of user activities. 
+Typically, the default `fullTracking` mode is desired, as it gives a detailed picture of user activities.
 
-On the other hand, on some screens event location of touches on otherwise blacklisted view can reveal sensitive private information (e.g., custom input view for PIN). In such a case, touches should not be recorded, and the app should switch to `ignoreUserInteractionEvents` mode temporarily. 
+On the other hand, on some screens event location of touches on otherwise blacklisted view can reveal sensitive private information (e.g., custom input view for PIN). In such a case, touches should not be recorded, and the app should switch to `ignoreUserInteractionEvents` mode temporarily.
 
 Some apps that handle complex private informations on some screens, may prefer stopping events recording altogether there, by switching to `noTracking` mode for the screens.
 
@@ -277,12 +277,12 @@ In the case you don't want SDK to record screen video, but still want to see use
 ```swift
 Smartlook.beginFullscreenSensitiveMode()
 Smartlook.endFullscreenSensitiveMode()
-let isSensitiveMode = Smartlook.isFullscreenSensitiveModeActive()  
+let isSensitiveMode = Smartlook.isFullscreenSensitiveModeActive()
 ```
 ```objc
 [Smartlook beginFullscreenSensitiveMode];
 [Smartlook endFullscreenSensitiveMode];
-BOOL isSensitiveMode = [Smartlook isFullscreenSensitiveModeActive];  
+BOOL isSensitiveMode = [Smartlook isFullscreenSensitiveModeActive];
 ```
 
 #### Analytics-only mode
@@ -294,12 +294,12 @@ In the case you don't want SDK not visualising any user interaction with the app
 ```swift
 Smartlook.beginAnalyticsOnlyMode()
 Smartlook.endAnalyticsOnlyMode()
-let isSensitiveMode = Smartlook.isFullscreenSensitiveModeActive()  
+let isSensitiveMode = Smartlook.isFullscreenSensitiveModeActive()
 ```
 ```objc
 [Smartlook beginFullscreenSensitiveMode];
 [Smartlook endFullscreenSensitiveMode];
-BOOL isSensitiveMode = [Smartlook isAnalyticsOnlyModeActive];  
+BOOL isSensitiveMode = [Smartlook isAnalyticsOnlyModeActive];
 ```
 
 #### Blacklisted overlay color
@@ -326,7 +326,7 @@ Smartlook.setUserIdentifier("user-id-178bc")
 [Smartlook setUserIdentifier:@"user-id-178bc");
 ```
 
-### Session properties 
+### Session properties
 
 Additional custom properties can be added to each recording session by calling:
 
@@ -348,7 +348,7 @@ Smartlook.clearSessionProperties() // removes all session properties
 ```objc
 [Smartlook removeSessionPropertyForName:(nonnull NSString *)name];
 [Smartlook clearSessionProperties];  // removes all session properties
-``` 
+```
 
 If you do want _locking_ a session property value to protect it against accidental further changes. Immutable property value cannot be changes once it is set (it can be removed and set again, though).
 
@@ -508,7 +508,7 @@ When compiling your app with Smartlook for debugging, you may encounter list of 
 
 ` (....) /Users/...../SLSnapshotRenderer.o unable to open object file: No such file or directory`
 
-These warnings appear when  `Target -> Build Settings -> Build Options -> Debug Information Format` is set to `DWARF with dSYM file`. This debug information format is not a default one, and is set manually e.g., when some crash analytics tools (e.g., Fabric.io Crashlytics) are used. 
+These warnings appear when  `Target -> Build Settings -> Build Options -> Debug Information Format` is set to `DWARF with dSYM file`. This debug information format is not a default one, and is set manually e.g., when some crash analytics tools (e.g., Fabric.io Crashlytics) are used.
 
 We are continuously trying to suppress the warnings by tweaking our release build process, so far with no avail.
 
@@ -516,9 +516,9 @@ We are continuously trying to suppress the warnings by tweaking our release buil
 
 You can configure the way of how the SDK captures/creates screen image for recording. There are two main rendering modes:
 
-| native |  wireframe | noRendering
-:-------------------------:|:-------------------------:|:-------------------------:
-<img src="/assets/img/docs/sdk/renderingMode/rendering_native.png" alt="rendering mode native" width="300"/> | <img src="/assets/img/docs/sdk/renderingMode/rendering_wireframe.png" alt="rendering mode wireframe" width="300"/> | <img src="/assets/img/docs/sdk/renderingMode/rendering_no_rendering.png" alt="rendering mode wireframe" width="300"/>
+|                                                    native                                                    |                                                     wireframe                                                      |                                                      noRendering                                                      |
+|:------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------:|
+| <img src="/assets/img/docs/sdk/renderingMode/rendering_native.png" alt="rendering mode native" width="300"/> | <img src="/assets/img/docs/sdk/renderingMode/rendering_wireframe.png" alt="rendering mode wireframe" width="300"/> | <img src="/assets/img/docs/sdk/renderingMode/rendering_no_rendering.png" alt="rendering mode wireframe" width="300"/> |
 
 Rendering mode can be set on SDK setup:
 
@@ -535,9 +535,9 @@ Smartlook.setRenderingMethod(to: Smartlook.RenderingMode)
 
 **Wireframe** rendering mode can be further configured by setting `RenderingModeOption`:
 
-| wireframe | blueprintWireframe | iconBlueprintWireframe |
-:-------------------------:|:-------------------------:|:-------------------------:
-<img src="/assets/img/docs/sdk/renderingMode/rendering_wireframe.png" alt="rendering mode native" width="250"/> | <img src="/assets/img/docs/sdk/renderingMode/rendering_blueprint.png" alt="rendering mode wireframe" width="250"/> | <img src="/assets/img/docs/sdk/renderingMode/rendering_icon_blueprint.png" alt="rendering mode native" width="250"/>
+|                                                    wireframe                                                    |                                                 blueprintWireframe                                                 |                                                iconBlueprintWireframe                                                |
+|:---------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------:|
+| <img src="/assets/img/docs/sdk/renderingMode/rendering_wireframe.png" alt="rendering mode native" width="250"/> | <img src="/assets/img/docs/sdk/renderingMode/rendering_blueprint.png" alt="rendering mode wireframe" width="250"/> | <img src="/assets/img/docs/sdk/renderingMode/rendering_icon_blueprint.png" alt="rendering mode native" width="250"/> |
 
 You can set RenderingModeOption in setup or on run like this:
 

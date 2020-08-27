@@ -7,7 +7,7 @@ subtitle: "SDK for screen recording and analytics of Unity games."
 
 The Smartlook Unity SDK is currently available for iOS and Android devices. Both of these platforms have specific builds different from standard mobile SDKs.
 
-If you are not using Unity, check out our [Android](https://smartlook.github.io/docs/sdk/android/) and [iOS](https://smartlook.github.io/docs/sdk/ios/) builds for normal apps.
+If you are not using Unity, check out our [Android](https://smartlook.github.io/legacy-docs/docs/sdk/android/) and [iOS](https://smartlook.github.io/legacy-docs/docs/sdk/ios/) builds for normal apps.
 
 Smartlook Unity iOS SDK works with Metal graphics API only. OpenGL is not supported at the moment.
 
@@ -20,7 +20,7 @@ Smartlook Unity iOS SDK works with Metal graphics API only. OpenGL is not suppor
 
 ## Reporting issues
 
-For more information on how to report issues please check our [Smartlook SDK Support section](https://smartlook.github.io/docs/sdk/support/#how-to-submit-an-issue).
+For more information on how to report issues please check our [Smartlook SDK Support section](https://smartlook.github.io/legacy-docs/docs/sdk/support/#how-to-submit-an-issue).
 
 ## Installation for Android
 
@@ -79,4 +79,4 @@ implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.61'
 
 ## API Reference
 
-Additional info regarding the documentation can be found in <a href="https://smartlook.github.io/docs/sdk/android/"> Android documentation for native SDK</a>
+Additional info regarding the documentation can be found in <a href="https://smartlook.github.io/legacy-docs/docs/sdk/android/"> Android documentation for native SDK</a>

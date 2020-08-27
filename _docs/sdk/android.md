@@ -13,7 +13,7 @@ description: "This SDK offers several options to developers and/or companies."
 
 ## Reporting issues and changelog
 
-For more information on how to report issues please check our [Smartlook SDK Support section](https://smartlook.github.io/docs/sdk/support/#how-to-submit-an-issue).
+For more information on how to report issues please check our [Smartlook SDK Support section](https://smartlook.github.io/legacy-docs/docs/sdk/support/#how-to-submit-an-issue).
 
 [Smartlook Android SDK changelog](https://github.com/smartlook/smartlook-android-sdk) reports all notable improvements, changes and fixes in SDK releases.
 
@@ -23,7 +23,7 @@ Currently, we support API 18+ for recording.
 
 ## WiFi / mobile connection / offline
 
-By default SDK uploads sessions only on **WiFi** if you want to upload sessions on mobile connections too, you need to enable this in your project setting in the dashboard. 
+By default SDK uploads sessions only on **WiFi** if you want to upload sessions on mobile connections too, you need to enable this in your project setting in the dashboard.
 
 ## Installation
 
@@ -72,14 +72,14 @@ Best place to call one of these methods is in Application class or any entry poi
 
 Some recording parameters can be configured on setup:
 
-| Parameter           | Required | Description                                                                                                                                        | Default value        |
-|---------------------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------|
-| apiKey              | yes      | Unique 40 character key identifying your app (can be found in the dashboard).                                                                      | ""                   |
+| Parameter           | Required | Description                                                                                                                           | Default value        |
+|---------------------|----------|---------------------------------------------------------------------------------------------------------------------------------------|----------------------|
+| apiKey              | yes      | Unique 40 character key identifying your app (can be found in the dashboard).                                                         | ""                   |
 | fps                 | no       | Recorded video frame rate (allowed values between 2 and 10). Note: Changing this value will override frame rate set in the Dashboard. | 2                    |
-| experimental        | no       | Set this to true to enable some experimental features as TextureView/Maps/MapBox recording etc.                                                    | false                |
-| activity            | no       | Actual activity reference is required when setting the SDK outside of Application class. Full example shown here.                                  | null                 |
-| renderingMode       | no       | Define the way SDK is going to capture screen image data. Full documentation here.                                                                 | RenderingMode.NATIVE |
-| renderingModeOption | no       | Further customization of rendering mode.                                                                                                                  | null                 |
+| experimental        | no       | Set this to true to enable some experimental features as TextureView/Maps/MapBox recording etc.                                       | false                |
+| activity            | no       | Actual activity reference is required when setting the SDK outside of Application class. Full example shown here.                     | null                 |
+| renderingMode       | no       | Define the way SDK is going to capture screen image data. Full documentation here.                                                    | RenderingMode.NATIVE |
+| renderingModeOption | no       | Further customization of rendering mode.                                                                                              | null                 |
 
 Full SDK setup configuration can be done with `SetupOptionsBuilder`, this allows you to set any of setup parameters shown above:
 
@@ -207,7 +207,7 @@ Smartlook.startFullscreenSensitiveMode()
 Instead of application recording, the video will be black when the sensitive mode is active. You can change sensitive mode fill color by starting it like this:
 
 ```java
-Smartlook.startFullscreenSensitiveMode(@ColorInt int color) 
+Smartlook.startFullscreenSensitiveMode(@ColorInt int color)
 ```
 
 Sensitive mode can be stopped:
@@ -226,19 +226,19 @@ Smartlook.isFullscreenSensitiveModeActive()
 
 You can specify your app’s user identifier by calling:
 
-```java 
+```java
 Smartlook.setUserIdentifier(@NonNull String identifier)
-``` 
+```
 
 You can then lookup those identifiers in the Dashboard to find specific user’s recordings.
 
 Additional user information, such as name, email and other custom properties can be set by calling:
 
-```java 
+```java
 Smartlook.setUserIdentifier(@NonNull String identifier, JSONObject sessionProperties)
 Smartlook.setUserIdentifier(@NonNull String identifier, Bundle sessionProperties)
 Smartlook.setUserIdentifier(@NonNull String identifier, String sessionPropertiesJsonString)
-``` 
+```
 You’ll see those properties in the Dashboard at Visitor details.
 
 ### Analytics
@@ -286,7 +286,7 @@ You can also explicitly tell the SDK if the navigation event happened between `A
 Smartlook.trackNavigationEvent(@NotNull String name, @ViewType String type, @ViewState String viewState)
 ```
 
-where viewType is one of `ViewType.ACTIVITY` or `ViewType.Fragment`. 
+where viewType is one of `ViewType.ACTIVITY` or `ViewType.Fragment`.
 
 #### Timed event
 
@@ -394,7 +394,7 @@ Then in Crashlytics dashboard, there should be a new `SMARTLOOK SESSION URL` key
 
 ## Referrer
 
-SDK automatically collects referrer value and source of installation per visitor and displays it in Dashboard. 
+SDK automatically collects referrer value and source of installation per visitor and displays it in Dashboard.
 In some cases you might want to set custom referrer by yourself, you can do this by calling:
 
 ```java
@@ -426,9 +426,9 @@ comming soon
 
 You can configure the way of how the SDK captures/creates screen image for recording. There are two main rendering modes:
 
-| NATIVE |  WIREFRAME |
-:-------------------------:|:-------------------------:
-<img src="/assets/img/docs/sdk/renderingMode/rendering_native.png" alt="rendering mode native" width="300"/> | <img src="/assets/img/docs/sdk/renderingMode/rendering_wireframe.png" alt="rendering mode wireframe" width="300"/>
+|                                                    NATIVE                                                    |                                                     WIREFRAME                                                      |
+|:------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------:|
+| <img src="/assets/img/docs/sdk/renderingMode/rendering_native.png" alt="rendering mode native" width="300"/> | <img src="/assets/img/docs/sdk/renderingMode/rendering_wireframe.png" alt="rendering mode wireframe" width="300"/> |
 
 Rendering mode can be set on SDK setup:
 
@@ -444,14 +444,14 @@ Smartlook.setRenderingMode(@RenderingMode String renderingMode)
 
 **Wireframe** rendering mode can be further configured by setting `RenderingModeOption`:
 
-| WIREFRAME | BLUEPRINT | ICON_BLUEPRINT |
-:-------------------------:|:-------------------------:|:-------------------------:
-<img src="/assets/img/docs/sdk/renderingMode/rendering_wireframe.png" alt="rendering mode native" width="250"/> | <img src="/assets/img/docs/sdk/renderingMode/rendering_blueprint.png" alt="rendering mode wireframe" width="250"/> | <img src="/assets/img/docs/sdk/renderingMode/rendering_icon_blueprint.png" alt="rendering mode native" width="250"/>
+|                                                    WIREFRAME                                                    |                                                     BLUEPRINT                                                      |                                                    ICON_BLUEPRINT                                                    |
+|:---------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------:|
+| <img src="/assets/img/docs/sdk/renderingMode/rendering_wireframe.png" alt="rendering mode native" width="250"/> | <img src="/assets/img/docs/sdk/renderingMode/rendering_blueprint.png" alt="rendering mode wireframe" width="250"/> | <img src="/assets/img/docs/sdk/renderingMode/rendering_icon_blueprint.png" alt="rendering mode native" width="250"/> |
 
 You can set RenderingModeOption in setup or on run like this:
 
 ```java
-Smartlook.setupAndStartRecording(String apiKey, 
+Smartlook.setupAndStartRecording(String apiKey,
                                  @RenderingMode String renderingMode,
                                  @RenderingModeOption String renderingModeOption)
 ```

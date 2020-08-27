@@ -3,8 +3,8 @@
     <div class="column col-12">
 
       <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ site.ca_url_web }}" {% if page.url contains site.ca_url_web %}class="active" {% endif %}>{{ site.ca_web }}</a></li>
-        <li class="breadcrumb-item"><a href="{{ site.ca_url_sdk }}" {% if page.url contains site.ca_url_sdk %}class="active" {% endif %}>{{ site.ca_sdk }}</a></li>
+        <li class="breadcrumb-item"><a href="{{ site.ca_url_web }}" {% if page.url contains 'docs/web' %}class="active" {% endif %}>{{ site.ca_web }}</a></li>
+        <li class="breadcrumb-item"><a href="{{ site.ca_url_sdk }}" {% if page.url contains 'docs/sdk' %}class="active" {% endif %}>{{ site.ca_sdk }}</a></li>
       </ul>
       <!-- breadcrumb -->
 

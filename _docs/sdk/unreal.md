@@ -7,7 +7,7 @@ subtitle: "SDK for screen recording and analytics of Unreal Engine games."
 
 The Smartlook Unreal SDK is currently available only for iOS devices.
 
-If you are not using Unreal, check out our [Android](https://smartlook.github.io/docs/sdk/android/) and [iOS](https://smartlook.github.io/docs/sdk/ios/) builds for normal apps.
+If you are not using Unreal, check out our [Android](https://smartlook.github.io/legacy-docs/docs/sdk/android/) and [iOS](https://smartlook.github.io/legacy-docs/docs/sdk/ios/) builds for normal apps.
 
 ## What you can do
 
@@ -18,7 +18,7 @@ If you are not using Unreal, check out our [Android](https://smartlook.github.io
 
 ## Reporting issues
 
-For more information on how to report issues please check our [Smartlook SDK Support section](https://smartlook.github.io/docs/sdk/support/#how-to-submit-an-issue).
+For more information on how to report issues please check our [Smartlook SDK Support section](https://smartlook.github.io/legacy-docs/docs/sdk/support/#how-to-submit-an-issue).
 
 ## Installation for iOS
 

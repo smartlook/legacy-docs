@@ -15,7 +15,7 @@ redirect_from:
 
 ## Reporting issues and changelog
 
-For more information on how to report issues please check our [Smartlook SDK Support section](https://smartlook.github.io/docs/sdk/support/#how-to-submit-an-issue).
+For more information on how to report issues please check our [Smartlook SDK Support section](https://smartlook.github.io/legacy-docs/docs/sdk/support/#how-to-submit-an-issue).
 
 Smartlook [Android SDK changelog](https://github.com/smartlook/smartlook-android-sdk) and [iOS SDK changelog](https://github.com/smartlook/smartlook-ios-sdk) report all notable improvements, changes and fixes in SDK releases.
 
@@ -150,7 +150,7 @@ You can specify your app’s user identifier by calling:
 
 ```typescript
 smartlook.setUserIdentifier(new SmartlookUserIdentifier(identifier: string));
-``` 
+```
 
 You can then look up those identifiers in the Dashboard to find specific user’s recordings.
 
@@ -158,7 +158,7 @@ Additional user information, such as name, email and other custom properties can
 
 ```typescript
 smartlook.setUserIdentifier(new SmartlookUserIdentifier(identifier: string, sessionProperties: {}));
-``` 
+```
 
 You’ll see those properties in the Dashboard in Visitor details.
 
@@ -181,15 +181,15 @@ You can track custom event by calling:
 
 ```typescript
 smartlook.trackCustomEvent(new SmartlookCustomEvent(name: string));
-``` 
+```
 
 If you need to send some additional data with custom event use:
 
 ```typescript
 smartlook.trackCustomEvent(new SmartlookCustomEvent(name: string, eventProperties: {}));
-``` 
+```
 
-Additional data can be used in **funnels** or any additional **filtering**. 
+Additional data can be used in **funnels** or any additional **filtering**.
 
 #### Timed event
 
@@ -200,7 +200,7 @@ You can call:
 smartlook.startTimedCustomEvent(new SmartlookCustomEvent(name: string));
 ```
 
-This will not send out any event, but once `track(...)` with corresponding event name gets called it will have extra **duration** property. 
+This will not send out any event, but once `track(...)` with corresponding event name gets called it will have extra **duration** property.
 
 You can set some aditional data by calling:
 
