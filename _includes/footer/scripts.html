@@ -1,26 +1,41 @@
 <!-- scripts -->
-<script src="/assets/js/vendor/prism-min.js"></script>
-<script src="/assets/js/vendor/clipboard-min.js"></script>
-<script src="/assets/js/vendor/lunr-min.js"></script>
-<script src="/assets/js/min/search-min.js"></script>
-<script src="/assets/js/min/plugins-min.js"></script>
-<script src="/assets/js/min/main-min.js"></script>
+<script src="/legacy-docs/assets/js/vendor/prism-min.js"></script>
+<script src="/legacy-docs/assets/js/vendor/clipboard-min.js"></script>
+<script src="/legacy-docs/assets/js/vendor/lunr-min.js"></script>
+<script src="/legacy-docs/assets/js/min/search-min.js"></script>
+<script src="/legacy-docs/assets/js/min/plugins-min.js"></script>
+<script src="/legacy-docs/assets/js/min/main-min.js"></script>
 
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_id }}"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_id }}"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '{{ site.google_analytics_id }}');
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "{{ site.google_analytics_id }}");
 </script>
 
 <!-- Smartlook -->
-<script type='text/javascript'>
-  window.smartlook||(function(d) {
-    var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
-    var c=d.createElement('script');o.api=new Array();c.async=true;c.crossOrigin='anonymous';c.type='text/javascript';
-    c.charset='utf-8';c.src='https://rec.smartlook.com/recorder.js';h.appendChild(c);
+<script type="text/javascript">
+  window.smartlook ||
+    (function (d) {
+      var o = (smartlook = function () {
+          o.api.push(arguments);
+        }),
+        h = d.getElementsByTagName("head")[0];
+      var c = d.createElement("script");
+      o.api = new Array();
+      c.async = true;
+      c.crossOrigin = "anonymous";
+      c.type = "text/javascript";
+      c.charset = "utf-8";
+      c.src = "https://rec.smartlook.com/recorder.js";
+      h.appendChild(c);
     })(document);
-    smartlook('init', 'a0357a43579f8edbcafeba7eeafcba5ca3d3dbe9');
+  smartlook("init", "a0357a43579f8edbcafeba7eeafcba5ca3d3dbe9");
 </script>

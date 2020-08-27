@@ -426,9 +426,9 @@ comming soon
 
 You can configure the way of how the SDK captures/creates screen image for recording. There are two main rendering modes:
 
-|                                                    NATIVE                                                    |                                                     WIREFRAME                                                      |
-|:------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------:|
-| <img src="/assets/img/docs/sdk/renderingMode/rendering_native.png" alt="rendering mode native" width="300"/> | <img src="/assets/img/docs/sdk/renderingMode/rendering_wireframe.png" alt="rendering mode wireframe" width="300"/> |
+|                                                          NATIVE                                                          |                                                           WIREFRAME                                                            |
+|:------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------:|
+| <img src="/legacy-docs/assets/img/docs/sdk/renderingMode/rendering_native.png" alt="rendering mode native" width="300"/> | <img src="/legacy-docs/assets/img/docs/sdk/renderingMode/rendering_wireframe.png" alt="rendering mode wireframe" width="300"/> |
 
 Rendering mode can be set on SDK setup:
 
@@ -444,9 +444,9 @@ Smartlook.setRenderingMode(@RenderingMode String renderingMode)
 
 **Wireframe** rendering mode can be further configured by setting `RenderingModeOption`:
 
-|                                                    WIREFRAME                                                    |                                                     BLUEPRINT                                                      |                                                    ICON_BLUEPRINT                                                    |
-|:---------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------:|
-| <img src="/assets/img/docs/sdk/renderingMode/rendering_wireframe.png" alt="rendering mode native" width="250"/> | <img src="/assets/img/docs/sdk/renderingMode/rendering_blueprint.png" alt="rendering mode wireframe" width="250"/> | <img src="/assets/img/docs/sdk/renderingMode/rendering_icon_blueprint.png" alt="rendering mode native" width="250"/> |
+|                                                          WIREFRAME                                                          |                                                           BLUEPRINT                                                            |                                                          ICON_BLUEPRINT                                                          |
+|:---------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------:|
+| <img src="/legacy-docs/assets/img/docs/sdk/renderingMode/rendering_wireframe.png" alt="rendering mode native" width="250"/> | <img src="/legacy-docs/assets/img/docs/sdk/renderingMode/rendering_blueprint.png" alt="rendering mode wireframe" width="250"/> | <img src="/legacy-docs/assets/img/docs/sdk/renderingMode/rendering_icon_blueprint.png" alt="rendering mode native" width="250"/> |
 
 You can set RenderingModeOption in setup or on run like this:
 
