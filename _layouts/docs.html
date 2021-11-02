@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head/meta-data.html %}
+
+<meta http-equiv="refresh" content="0; url=https://docs.smartlook.com/">
+<link rel="canonical" href="https://docs.smartlook.com/" />
+
+<body {% if page.class != null %}class="{% if page.class == 'home-github' %}{{ page.class }}{% elsif page.class == 'home-docs' %}{{ page.class }}{% endif %}"{% endif %}{% if page.class == null %} class="{{ page.title | slugify }}"{% endif %}>
+
+  {% include header/site-nav.html %}
+
+  {{ content }}
+
+  <div class="container grid-lg">
+    {% include footer/footer.html %}
+  </div>
+  <!-- container -->
+
+  {% include footer/scripts.html %}
+
+</body>
+
+</html>
